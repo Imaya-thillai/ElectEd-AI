@@ -32,7 +32,7 @@ describe('getFallbackResponse', () => {
 
   it('should return welcome message for generic queries', () => {
     const response = getFallbackResponse('hello');
-    assert.ok(response.includes('VoteGuide AI'));
+    assert.ok(response.includes('ElectEd AI'));
   });
 
   it('should handle ballot-related queries', () => {

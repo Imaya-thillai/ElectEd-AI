@@ -40,7 +40,7 @@ const logFormat = winston.format.combine(
 const logger = winston.createLogger({
   level: logLevel,
   format: logFormat,
-  defaultMeta: { service: 'voteguide-ai' },
+  defaultMeta: { service: 'elected-ai' },
   transports: [
     new winston.transports.Console({
       handleExceptions: true,

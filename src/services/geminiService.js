@@ -12,7 +12,7 @@
 const { GoogleGenerativeAI } = require('@google/generative-ai');
 const { logger } = require('../utils/logger');
 
-const SYSTEM_PROMPT = `You are VoteGuide AI, an expert Election Process Education Assistant. Help users understand elections, voting procedures, timelines, and democratic participation clearly and engagingly.
+const SYSTEM_PROMPT = `You are ElectEd AI, an expert Election Process Education Assistant. Help users understand elections, voting procedures, timelines, and democratic participation clearly and engagingly.
 
 KNOWLEDGE AREAS: Voter Registration, Types of Elections, Voting Methods, Election Timelines, Voting Process, Electoral Systems, Election Security, Civic Rights, Election Results, Global Elections.
 
@@ -108,7 +108,9 @@ function getFallbackResponse(message) {
   if (lower.includes('security') || lower.includes('secure') || lower.includes('safe') || lower.includes('fraud')) return '## 🔒 Election Security\n\n- **Paper Trails**: Verifiable paper records\n- **Audits**: Post-election verification\n- **Poll Watchers**: Multi-party observation\n- **Encryption**: Strong digital security\n- **Chain of Custody**: Strict ballot handling\n- **Bipartisan Teams**: Multi-party operations';
   if (lower.includes('vote') || lower.includes('ballot')) return '## 🗳️ How to Vote\n\n1. **Verify Registration** and find your polling place\n2. **Choose Your Method**: In-person, early voting, or mail-in\n3. **Bring Required ID**\n4. **Cast Your Ballot** carefully\n5. **Get Your Receipt**\n\n> 🔒 Your vote is secret and protected by law.';
   if (lower.includes('timeline') || lower.includes('date') || lower.includes('when')) return '## 📅 Election Timeline\n\n| Phase | When |\n|-------|------|\n| Candidate Filing | 6-12 months before |\n| Primaries | 3-6 months before |\n| Registration Deadline | 15-30 days before |\n| Early Voting | 7-45 days before |\n| Election Day | Set date |\n| Results Certification | Days to weeks after |';
-  return '## 🏛️ Welcome to VoteGuide AI!\n\nI can help you learn about:\n\n- 📋 **Voter Registration**\n- 🗳️ **Voting Methods**\n- 📅 **Election Timelines**\n- 🔒 **Election Security**\n- 🏛️ **Electoral Systems**\n- ♿ **Accessibility**\n\nAsk me anything about elections!';
+  if (lower.includes('type') || lower.includes('different') || lower.includes('kinds')) return '## 🏛️ Types of Elections\n\n- **General Elections**: Final election to choose officeholders.\n- **Primary Elections**: Parties choose their candidates.\n- **Local Elections**: For city councils, mayors, and school boards.\n- **Special Elections**: Held to fill sudden vacancies.\n- **Midterm Elections**: Congressional elections held halfway through a president\'s term.';
+  if (lower.includes('rank') || lower.includes('ranked-choice') || lower.includes('rcv')) return '## 🔢 Ranked-Choice Voting (RCV)\n\nRanked-choice voting allows voters to rank candidates in order of preference (1st, 2nd, 3rd, etc.).\n\n**How it works:**\nIf a candidate wins a majority of first-preference votes, they win. If no one gets a majority, the candidate with the fewest votes is eliminated. Those voters\' second choices are then distributed to the remaining candidates. This process continues until a candidate reaches a majority (>50%).';
+  return '## 🏛️ Welcome to ElectEd AI!\n\nI can help you learn about:\n\n- 📋 **Voter Registration**\n- 🗳️ **Voting Methods**\n- 📅 **Election Timelines**\n- 🔒 **Election Security**\n- 🏛️ **Electoral Systems**\n- ♿ **Accessibility**\n\nAsk me anything about elections!';
 }
 
 /** Send message to Gemini AI with conversation context */
@@ -120,8 +122,8 @@ async function chat(message, sessionId) {
     const history = conversationManager.getHistory(sessionId);
     const chatSession = aiModel.startChat({
       history: [
-        { role: 'user', parts: [{ text: 'Initialize as VoteGuide AI.' }] },
-        { role: 'model', parts: [{ text: 'I am VoteGuide AI, your Election Process Education Assistant. How can I help you today?' }] },
+        { role: 'user', parts: [{ text: 'Initialize as ElectEd AI.' }] },
+        { role: 'model', parts: [{ text: 'I am ElectEd AI, your Election Process Education Assistant. How can I help you today?' }] },
         ...history
       ],
       systemInstruction: SYSTEM_PROMPT

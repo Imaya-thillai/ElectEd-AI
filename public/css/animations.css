@@ -1,5 +1,5 @@
 /* ============================================================================
-   VoteGuide AI — Animations & Transitions
+   ElectEd AI — Animations & Transitions
    Premium 3D transitions, micro-animations, and visual effects
    ============================================================================ */
 
@@ -252,18 +252,18 @@
    ============================================================================ */
 
 .feature-card {
-  transition: all var(--transition-base);
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   transform: translateY(0);
   will-change: transform, box-shadow;
 }
 
 .feature-card:hover {
-  transform: translateY(-6px);
-  box-shadow: var(--shadow-xl);
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
 }
 
 .feature-card:active {
-  transform: translateY(-2px);
+  transform: translateY(-2px) scale(0.98);
 }
 
 .feature-card-icon {
@@ -497,4 +497,42 @@
 @keyframes gradientShimmer {
   0% { background-position: 0% center; }
   100% { background-position: 200% center; }
+}
+
+/* ============================================================================
+   Button Polish Animations
+   ============================================================================ */
+
+.btn-primary {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.btn-primary::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.3) 50%, rgba(255,255,255,0) 100%);
+  transform: skewX(-20deg);
+  animation: buttonShine 4s infinite;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 15px -3px rgba(66, 133, 244, 0.4);
+}
+
+.btn-secondary:hover {
+  transform: translateY(-2px);
+  background: var(--gray-100);
+}
+
+@keyframes buttonShine {
+  0% { left: -100%; }
+  20% { left: 200%; }
+  100% { left: 200%; }
 }

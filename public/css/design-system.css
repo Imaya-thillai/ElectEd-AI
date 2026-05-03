@@ -1,5 +1,5 @@
 /* ============================================================================
-   VoteGuide AI — Design System
+   ElectEd AI — Design System
    Google Cloud-inspired white theme with premium design tokens
    ============================================================================ */
 
@@ -125,7 +125,7 @@
 
   /* Layout */
   --navbar-height: 64px;
-  --max-width: 1200px;
+  --max-width: 1500px;
   --max-width-chat: 800px;
 }
 

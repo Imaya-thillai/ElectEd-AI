@@ -1,10 +1,10 @@
 /**
- * VoteGuide AI — Frontend Application
+ * ElectEd AI — Frontend Application
  * 
  * Main client-side application handling navigation, chat, quiz,
  * glossary, and all interactive features.
  * 
- * @author VoteGuide AI Team
+ * @author ElectEd AI Team
  */
 
 'use strict';
@@ -34,9 +34,11 @@ function generateSessionId() {
 // Initialization
 // =============================================================================
 
-document.addEventListener('DOMContentLoaded', () => {
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initializeApp);
+} else {
   initializeApp();
-});
+}
 
 /** Bootstrap the entire application */
 function initializeApp() {
@@ -209,7 +211,7 @@ function renderPhases(phases) {
 
   // Phase cards
   container.innerHTML = phases.map((phase, i) => `
-    <div class="phase-card fade-in-up stagger-${i + 1}" id="phase-${phase.id}" 
+    <div class="phase-card" id="phase-${phase.id}" 
          onclick="togglePhase('${phase.id}')" tabindex="0" role="button"
          aria-expanded="false" aria-label="${phase.title}">
       <div class="phase-card-header">

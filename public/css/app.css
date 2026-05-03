@@ -1,5 +1,5 @@
 /* ============================================================================
-   VoteGuide AI — App Layout & Page Styles
+   ElectEd AI — App Layout & Page Styles
    ============================================================================ */
 
 .app { min-height: 100vh; }
@@ -263,4 +263,36 @@
 
 .phase-tip::before {
   content: '💡'; position: absolute; left: 0; top: var(--space-1);
+}
+
+@media (max-width: 640px) {
+  .section-learn, .section-quiz, .section-glossary, .features-section {
+    padding: var(--space-6) var(--space-4);
+  }
+  
+  .timeline-progress-dots {
+    display: none;
+  }
+  
+  .phase-card-header {
+    padding: var(--space-4);
+    gap: var(--space-3);
+  }
+  
+  .phase-card-number {
+    width: 36px; height: 36px;
+    font-size: var(--text-base);
+  }
+  
+  .phase-card-title {
+    font-size: var(--text-base);
+  }
+  
+  .phase-card-icon {
+    display: none;
+  }
+  
+  .phase-card-content {
+    padding: 0 var(--space-4) var(--space-4);
+  }
 }

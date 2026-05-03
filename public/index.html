@@ -1,15 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" translate="no">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="VoteGuide AI - An intelligent Election Process Education Assistant powered by Google Gemini AI. Learn about voting, registration, timelines, and democratic participation.">
+  <meta name="description" content="ElectEd AI - An intelligent Election Process Education Assistant powered by Google Gemini AI. Learn about voting, registration, timelines, and democratic participation.">
   <meta name="keywords" content="election, voting, education, AI, democracy, voter registration, civic education">
-  <meta name="author" content="VoteGuide AI Team">
+  <meta name="author" content="ElectEd AI Team">
   <meta name="theme-color" content="#4285F4">
   <meta name="robots" content="index, follow">
+  <meta name="google" content="notranslate">
 
-  <title>VoteGuide AI — Election Process Education Assistant</title>
+  <title>ElectEd AI — Election Process Education Assistant</title>
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -50,8 +51,7 @@
           <span class="material-icons-outlined loading-icon">how_to_vote</span>
         </div>
       </div>
-      <h1 class="loading-title">VoteGuide AI</h1>
-      <p class="loading-subtitle">Powered by Google Gemini</p>
+      <h1 class="loading-title">ElectEd AI</h1>
       <div class="loading-bar">
         <div class="loading-bar-progress"></div>
       </div>
@@ -65,8 +65,7 @@
       <div class="navbar-container">
         <div class="navbar-brand" id="nav-brand">
           <span class="material-icons-outlined navbar-logo">how_to_vote</span>
-          <span class="navbar-title">VoteGuide<span class="navbar-title-ai">AI</span></span>
-          <span class="navbar-badge">Gemini Powered</span>
+          <span class="navbar-title">ElectEd<span class="navbar-title-ai">AI</span></span>
         </div>
         <div class="navbar-links" id="nav-links" role="menubar">
           <button class="nav-link active" data-section="home" role="menuitem" id="nav-home" aria-current="page">
@@ -102,7 +101,7 @@
       <div class="mobile-drawer-content">
         <div class="mobile-drawer-header">
           <span class="material-icons-outlined">how_to_vote</span>
-          <span>VoteGuide AI</span>
+          <span>ElectEd AI</span>
           <button class="mobile-drawer-close" id="drawer-close" aria-label="Close menu">
             <span class="material-icons-outlined">close</span>
           </button>
@@ -140,10 +139,6 @@
             <div class="hero-grid"></div>
           </div>
           <div class="hero-content">
-            <div class="hero-chip">
-              <span class="material-icons-outlined">auto_awesome</span>
-              Powered by Google Gemini AI
-            </div>
             <h1 id="home-heading" class="hero-title">
               Understand the <span class="hero-title-gradient">Election Process</span>
               <br>Like Never Before
@@ -163,6 +158,7 @@
                 Ask AI Assistant
               </button>
             </div>
+            
             <div class="hero-stats">
               <div class="hero-stat">
                 <span class="hero-stat-number" id="stat-phases">6</span>
@@ -234,16 +230,6 @@
               <p>Advanced AI for intelligent election Q&A</p>
             </div>
             <div class="google-service-item">
-              <div class="google-service-icon">🌐</div>
-              <h4>Google Translate</h4>
-              <p>Multi-language accessibility support</p>
-            </div>
-            <div class="google-service-item">
-              <div class="google-service-icon">📊</div>
-              <h4>Google Analytics</h4>
-              <p>Usage insights for improvement</p>
-            </div>
-            <div class="google-service-item">
               <div class="google-service-icon">☁️</div>
               <h4>Cloud Run</h4>
               <p>Scalable serverless deployment</p>
@@ -284,7 +270,7 @@
                 <span class="chat-status-dot"></span>
               </div>
               <div>
-                <h1 id="chat-heading" class="chat-title">VoteGuide AI Assistant</h1>
+                <h1 id="chat-heading" class="chat-title">ElectEd AI Assistant</h1>
                 <p class="chat-subtitle">Ask me anything about elections</p>
               </div>
             </div>
@@ -303,7 +289,7 @@
               </div>
               <div class="chat-message-content">
                 <div class="chat-message-bubble">
-                  <h3>👋 Welcome to VoteGuide AI!</h3>
+                  <h3>👋 Welcome to ElectEd AI!</h3>
                   <p>I'm your Election Process Education Assistant, powered by Google Gemini AI. I can help you understand:</p>
                   <ul>
                     <li>📋 Voter registration process</li>
@@ -343,7 +329,7 @@
                 <span class="material-icons-outlined">send</span>
               </button>
             </div>
-            <p class="chat-disclaimer">VoteGuide AI provides educational info, not legal advice. Verify details with local election officials.</p>
+            <p class="chat-disclaimer">ElectEd AI provides educational info, not legal advice. Verify details with local election officials.</p>
           </div>
         </div>
       </section>
@@ -467,27 +453,13 @@
       <div class="footer-container">
         <div class="footer-brand">
           <span class="material-icons-outlined">how_to_vote</span>
-          <span>VoteGuide AI</span>
+          <span>ElectEd AI</span>
         </div>
         <p class="footer-text">An Election Process Education Assistant built with Google Gemini AI for the Hack2Skill Virtual PromptWars Challenge.</p>
         <p class="footer-disclaimer">This is an educational tool. Always verify election information with your local election officials.</p>
       </div>
     </footer>
   </div>
-
-  <!-- Google Translate Widget -->
-  <div id="google_translate_element" style="position: fixed; bottom: 20px; right: 20px; z-index: 1000;"></div>
-  <script>
-    function googleTranslateElementInit() {
-      new google.translate.TranslateElement({
-        pageLanguage: 'en',
-        includedLanguages: 'en,es,fr,de,hi,zh-CN,ar,ja,ko,pt,ru',
-        layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
-        autoDisplay: false
-      }, 'google_translate_element');
-    }
-  </script>
-  <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
   <!-- Application JavaScript -->
   <script src="js/app.js"></script>

@@ -1,7 +1,7 @@
 /**
  * API Routes
  * 
- * Defines all REST API endpoints for the VoteGuide AI application.
+ * Defines all REST API endpoints for the ElectEd AI application.
  * Includes health checks, chat, election data, and quiz endpoints.
  * 
  * @module routes/api

@@ -1,7 +1,7 @@
 {
-  "name": "voteguide-ai",
+  "name": "elected-ai",
   "version": "1.0.0",
-  "description": "VoteGuide AI - An intelligent Election Process Education Assistant powered by Google Gemini AI. Helps users understand the election process, timelines, and steps in an interactive and easy-to-follow way.",
+  "description": "ElectEd AI - An intelligent Election Process Education Assistant powered by Google Gemini AI. Helps users understand the election process, timelines, and steps in an interactive and easy-to-follow way.",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
@@ -21,7 +21,7 @@
     "democracy",
     "assistant"
   ],
-  "author": "VoteGuide AI Team",
+  "author": "ElectEd AI Team",
   "license": "MIT",
   "dependencies": {
     "@google/generative-ai": "^0.24.0",

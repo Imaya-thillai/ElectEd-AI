@@ -1,5 +1,5 @@
 /* ============================================================================
-   VoteGuide AI — Chat, Quiz, Glossary & Footer Styles
+   ElectEd AI — Chat, Quiz, Glossary & Footer Styles
    ============================================================================ */
 
 /* ===== CHAT SECTION ===== */
@@ -362,6 +362,36 @@
   margin-top: var(--space-4); font-style: italic;
 }
 
-/* ===== Typing Indicator ===== */
-.typing-message { align-self: flex-start; }
 .typing-message .chat-message-bubble { background: var(--white); border: 1px solid var(--border-color); }
+
+@media (max-width: 640px) {
+  .chat-message {
+    max-width: 95%;
+  }
+  
+  .chat-header {
+    padding: var(--space-3) var(--space-4);
+  }
+  
+  .chat-input-container {
+    padding: var(--space-3) var(--space-4);
+  }
+  
+  .quiz-start-card, .quiz-results-card, .quiz-question-card {
+    padding: var(--space-6) var(--space-4);
+  }
+  
+  .quiz-start-info {
+    flex-direction: column;
+    gap: var(--space-3);
+    align-items: center;
+  }
+  
+  .glossary-search-wrapper {
+    max-width: 100%;
+  }
+  
+  .glossary-grid {
+    grid-template-columns: 1fr;
+  }
+}

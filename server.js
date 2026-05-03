@@ -1,5 +1,5 @@
 /**
- * VoteGuide AI - Election Process Education Assistant
+ * ElectEd AI - Election Process Education Assistant
  * 
  * Main server entry point. Configures Express with security middleware,
  * rate limiting, compression, and serves both the API and static frontend.
@@ -73,7 +73,8 @@ app.use(helmet({
       frameSrc: [
         "'self'",
         "https://translate.google.com"
-      ]
+      ],
+      scriptSrcAttr: ["'unsafe-inline'"]
     }
   },
   crossOriginEmbedderPolicy: false
@@ -174,7 +175,7 @@ app.use(errorHandler);
 // =============================================================================
 
 const server = app.listen(PORT, () => {
-  logger.info(`VoteGuide AI server running on port ${PORT}`);
+  logger.info(`ElectEd AI server running on port ${PORT}`);
   logger.info(`Environment: ${process.env.NODE_ENV || 'development'}`);
   logger.info(`Health check: http://localhost:${PORT}/api/health`);
 });
