@@ -231,26 +231,23 @@ npm run test:unit
 
 ---
 
-## ☁️ Deployment (Google Cloud Run)
+## ☁️ Deployment (Render)
 
-```bash
-# Build Docker image
-docker build -t elected-ai .
+This application can be easily deployed for free on [Render.com](https://render.com).
 
-# Tag for Google Container Registry
-docker tag elected-ai gcr.io/YOUR_PROJECT_ID/elected-ai
-
-# Push to registry
-docker push gcr.io/YOUR_PROJECT_ID/elected-ai
-
-# Deploy to Cloud Run
-gcloud run deploy elected-ai \
-  --image gcr.io/YOUR_PROJECT_ID/elected-ai \
-  --platform managed \
-  --region us-central1 \
-  --allow-unauthenticated \
-  --set-env-vars="GEMINI_API_KEY=your_key_here"
-```
+### Steps to Deploy:
+1. Push your code to a GitHub repository.
+2. Log in to [Render](https://dashboard.render.com/) and click **New +** -> **Web Service**.
+3. Connect your GitHub account and select the `ElectEd-AI` repository.
+4. Configure the Web Service:
+   - **Name:** elected-ai
+   - **Environment:** Node
+   - **Build Command:** `npm install`
+   - **Start Command:** `npm start`
+5. Scroll down to **Advanced** and add Environment Variables:
+   - Key: `GEMINI_API_KEY` | Value: `your_gemini_api_key_here`
+6. Click **Create Web Service**.
+7. Wait a few minutes for the build to complete. Render will provide a live URL (e.g., `https://elected-ai.onrender.com`).
 
 ---
 
