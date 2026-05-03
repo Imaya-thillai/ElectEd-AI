@@ -1,3 +1,4 @@
+
 # 🗳️ ElectEd AI — Election Process Education Assistant
 
 > An intelligent, AI-powered assistant that helps users understand the election process, timelines, and steps in an interactive and easy-to-follow way.
