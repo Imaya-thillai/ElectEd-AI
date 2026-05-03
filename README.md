@@ -45,17 +45,17 @@ Many citizens find the election process confusing — from voter registration to
 ### Solution Design
 ElectEd AI addresses this through a **multi-modal learning approach**:
 
-1. **Interactive Timeline** — Visual, step-by-step walkthrough of all 6 election phases (Registration → Post-Election)
-2. **AI Chat Assistant** — Natural language Q&A powered by Google Gemini AI for personalized, context-aware answers
-3. **Knowledge Quiz** — Gamified learning with immediate feedback and explanations
-4. **Election Glossary** — Searchable dictionary of election terminology
+1. **Interactive Timeline** — Visual, step-by-step walkthrough of all 6 election phases (Registration → Post-Election).
+2. **AI Chat Assistant** — Natural language Q&A powered by Google Gemini AI for personalized, context-aware answers.
+3. **Knowledge Quiz** — Gamified learning with immediate feedback and detailed explanations.
+4. **Election Glossary** — Searchable dictionary of election terminology.
 
 ### Architectural Decisions
-- **Server-side AI processing** — Keeps API keys secure, enables rate limiting
-- **Conversation memory** — Context-aware chat with session management
-- **Progressive enhancement** — Fallback responses when AI is unavailable
-- **Responsive design** — Mobile-first, accessible to all users
-- **Google Cloud-inspired UI** — Clean, professional white theme with premium animations
+- **Server-side AI processing** — Keeps API keys secure, enables rate limiting.
+- **Conversation memory** — Context-aware chat with session management.
+- **Progressive enhancement** — Fallback responses when AI is unavailable.
+- **Responsive design** — Mobile-first, accessible to all users.
+- **Google Cloud-inspired UI** — Clean, professional white theme with premium animations.
 
 ### Decision Flow
 ```
@@ -71,29 +71,29 @@ User Query → Input Sanitization → Rate Limit Check → Gemini AI Processing
 ## ⚙️ How It Works
 
 ### 1. Interactive Election Timeline (Learn Section)
-- Fetches structured election phase data from the API
-- Renders expandable cards with numbered steps, descriptions, and pro tips
-- Visual progress bar tracks which phases the user has explored
-- Covers: Registration → Pre-Election → Primaries → Early Voting → Election Day → Post-Election
+- Fetches structured election phase data from the API.
+- Renders expandable cards with numbered steps, descriptions, and pro tips.
+- Visual progress bar tracks which phases the user has explored.
+- Covers: Registration → Pre-Election → Primaries → Early Voting → Election Day → Post-Election.
 
 ### 2. AI Chat Assistant
-- Users type natural language questions about elections
-- Messages are sanitized, validated, and sent to Google Gemini AI
-- Gemini responds with accurate, non-partisan election education
-- Conversation history is maintained for context-aware follow-ups
-- Suggested questions help users get started
-- Markdown rendering for rich, formatted responses
+- Users type natural language questions about elections.
+- Messages are sanitized, validated, and sent to Google Gemini AI.
+- Gemini responds with accurate, non-partisan election education.
+- Conversation history is maintained for context-aware follow-ups.
+- Suggested questions help users get started.
+- Markdown rendering for rich, formatted responses.
 
 ### 3. Knowledge Quiz
-- Randomized questions pulled from a curated question bank
-- Immediate feedback with correct/incorrect animations
-- Detailed explanations after each answer
-- Score tracking with results summary and performance feedback
+- Randomized questions pulled from a curated question bank.
+- Immediate feedback with correct/incorrect animations.
+- Detailed explanations after each answer.
+- Score tracking with results summary and performance feedback.
 
 ### 4. Election Glossary
-- Searchable, filterable glossary of 15+ election terms
-- Real-time search with debounced filtering
-- Clean card layout for easy browsing
+- Searchable, filterable glossary of 15+ election terms.
+- Real-time search with debounced filtering.
+- Clean card layout for easy browsing.
 
 ---
 
@@ -105,8 +105,6 @@ User Query → Input Sanitization → Rate Limit Check → Gemini AI Processing
 | 📚 **Interactive Timeline** | 6-phase election process walkthrough |
 | 🧠 **Quiz Engine** | 10 questions with explanations and scoring |
 | 📖 **Glossary** | Searchable election terminology dictionary |
-| 🌐 **Multi-language** | Google Translate integration for accessibility |
-| 📊 **Analytics** | Google Analytics for usage insights |
 | 🔒 **Security** | Helmet, CORS, rate limiting, input sanitization |
 | ♿ **Accessible** | ARIA labels, keyboard nav, skip links, screen reader support |
 | 📱 **Responsive** | Mobile-first design with drawer navigation |
@@ -135,8 +133,6 @@ User Query → Input Sanitization → Rate Limit Check → Gemini AI Processing
 |---------|-------|
 | **Google Gemini AI** | Core AI engine for intelligent election Q&A |
 | **Google Cloud Run** | Serverless deployment platform |
-| **Google Translate** | Multi-language support widget |
-| **Google Analytics** | User engagement tracking |
 | **Google Fonts** | Typography (Google Sans, Inter) |
 | **Material Icons** | UI iconography |
 
@@ -198,8 +194,8 @@ elected-ai/
 
 ```bash
 # 1. Clone the repository
-git clone https://github.com/YOUR_USERNAME/elected-ai.git
-cd elected-ai
+git clone https://github.com/Imaya-thillai/ElectEd-AI.git
+cd ElectEd-AI
 
 # 2. Install dependencies
 npm install
@@ -326,7 +322,5 @@ This project is licensed under the MIT License — see the [LICENSE](LICENSE) fi
   Built with ❤️ using Google Antigravity & Google Gemini AI
   <br>
   <strong>Hack2Skill Virtual PromptWars 2026</strong>
-</p>
-#   E l e c t E d - A I  
- #   E l e c t E d - A I  
+</p>#   E l e c t E d - A I  
  
