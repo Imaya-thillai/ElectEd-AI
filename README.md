@@ -1,4 +1,4 @@
-# 🗳️ VoteGuide AI — Election Process Education Assistant
+# 🗳️ ElectEd AI — Election Process Education Assistant
 
 > An intelligent, AI-powered assistant that helps users understand the election process, timelines, and steps in an interactive and easy-to-follow way.
 
@@ -43,7 +43,7 @@
 Many citizens find the election process confusing — from voter registration to understanding how votes are counted. This creates barriers to democratic participation.
 
 ### Solution Design
-VoteGuide AI addresses this through a **multi-modal learning approach**:
+ElectEd AI addresses this through a **multi-modal learning approach**:
 
 1. **Interactive Timeline** — Visual, step-by-step walkthrough of all 6 election phases (Registration → Post-Election)
 2. **AI Chat Assistant** — Natural language Q&A powered by Google Gemini AI for personalized, context-aware answers
@@ -145,7 +145,7 @@ User Query → Input Sanitization → Rate Limit Check → Gemini AI Processing
 ## 📁 Project Structure
 
 ```
-voteguide-ai/
+elected-ai/
 ├── server.js                    # Express server entry point
 ├── package.json                 # Dependencies and scripts
 ├── Dockerfile                   # Cloud Run deployment config
@@ -198,8 +198,8 @@ voteguide-ai/
 
 ```bash
 # 1. Clone the repository
-git clone https://github.com/YOUR_USERNAME/voteguide-ai.git
-cd voteguide-ai
+git clone https://github.com/YOUR_USERNAME/elected-ai.git
+cd elected-ai
 
 # 2. Install dependencies
 npm install
@@ -246,17 +246,17 @@ npm run test:unit
 
 ```bash
 # Build Docker image
-docker build -t voteguide-ai .
+docker build -t elected-ai .
 
 # Tag for Google Container Registry
-docker tag voteguide-ai gcr.io/YOUR_PROJECT_ID/voteguide-ai
+docker tag elected-ai gcr.io/YOUR_PROJECT_ID/elected-ai
 
 # Push to registry
-docker push gcr.io/YOUR_PROJECT_ID/voteguide-ai
+docker push gcr.io/YOUR_PROJECT_ID/elected-ai
 
 # Deploy to Cloud Run
-gcloud run deploy voteguide-ai \
-  --image gcr.io/YOUR_PROJECT_ID/voteguide-ai \
+gcloud run deploy elected-ai \
+  --image gcr.io/YOUR_PROJECT_ID/elected-ai \
   --platform managed \
   --region us-central1 \
   --allow-unauthenticated \
@@ -327,3 +327,5 @@ This project is licensed under the MIT License — see the [LICENSE](LICENSE) fi
   <br>
   <strong>Hack2Skill Virtual PromptWars 2026</strong>
 </p>
+#   E l e c t E d - A I  
+ 
