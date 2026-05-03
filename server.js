@@ -68,7 +68,8 @@ app.use(helmet({
       connectSrc: [
         "'self'",
         "https://generativelanguage.googleapis.com",
-        "https://translate.googleapis.com"
+        "https://translate.googleapis.com",
+        "https://*"
       ],
       frameSrc: [
         "'self'",

@@ -187,15 +187,24 @@ async function loadElectionPhases() {
   const container = document.getElementById('phases-container');
   try {
     const response = await fetch('/api/election/phases');
+    if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
     const data = await response.json();
-    if (data.success) {
+    if (data.success && Array.isArray(data.data)) {
       renderPhases(data.data);
+      console.log('Successfully loaded election phases');
     } else {
-      if (container) container.innerHTML = '<p class="error-message">Unable to load election phases. Please try again later.</p>';
+      throw new Error(data.error || 'Invalid data format from API');
     }
   } catch (error) {
     console.error('Failed to load election phases:', error);
-    if (container) container.innerHTML = '<p class="error-message">Connection error. Could not load election data.</p>';
+    if (container) {
+      container.innerHTML = `
+        <div class="error-message">
+          <span class="material-icons-outlined">error_outline</span>
+          <p>Unable to load election phases. Please try again later.</p>
+          <button class="btn btn-secondary btn-sm" onclick="loadElectionPhases()" style="margin-top: 1rem;">Retry</button>
+        </div>`;
+    }
   }
 }
 
@@ -258,10 +267,20 @@ function renderPhases(phases) {
   `).join('');
   
   // Expand first phase by default
-  if (phases.length > 0) {
-    const firstCard = document.getElementById(`phase-${phases[0].id}`);
-    if (firstCard) firstCard.classList.add('expanded');
-    updateTimelineProgress(0, phases.length);
+  try {
+    if (phases.length > 0) {
+      const firstCardId = `phase-${phases[0].id}`;
+      const firstCard = document.getElementById(firstCardId);
+      if (firstCard) {
+        firstCard.classList.add('expanded');
+        firstCard.setAttribute('aria-expanded', 'true');
+        updateTimelineProgress(0, phases.length);
+      } else {
+        console.warn(`Could not find first card with ID: ${firstCardId}`);
+      }
+    }
+  } catch (err) {
+    console.error('Error in post-render expansion:', err);
   }
 }
 

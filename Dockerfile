@@ -18,7 +18,7 @@ EXPOSE 8080
 
 # Set environment variables
 ENV NODE_ENV=production
-ENV PORT=8080
+# PORT is injected by the deployment platform (Render, Cloud Run, etc.)
 
 # Run as non-root user for security
 RUN groupadd -r appuser && useradd -r -g appuser appuser
