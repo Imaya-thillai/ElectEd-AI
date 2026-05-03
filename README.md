@@ -2,13 +2,6 @@
 
 > An intelligent, AI-powered assistant that helps users understand the election process, timelines, and steps in an interactive and easy-to-follow way.
 
-**Built for Hack2Skill Virtual PromptWars Challenge 2 — Election Process Education**
-
-[![Google Gemini](https://img.shields.io/badge/Google%20Gemini-AI%20Powered-4285F4?logo=google&logoColor=white)](https://ai.google.dev/)
-[![Node.js](https://img.shields.io/badge/Node.js-18+-339933?logo=node.js&logoColor=white)](https://nodejs.org/)
-[![Cloud Run](https://img.shields.io/badge/Google%20Cloud-Run-4285F4?logo=google-cloud&logoColor=white)](https://cloud.google.com/run)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-
 ---
 
 ## 📋 Table of Contents
@@ -322,5 +315,4 @@ This project is licensed under the MIT License — see the [LICENSE](LICENSE) fi
   Built with ❤️ using Google Antigravity & Google Gemini AI
   <br>
   <strong>Hack2Skill Virtual PromptWars 2026</strong>
-</p>#   E l e c t E d - A I  
- 
+</p>
