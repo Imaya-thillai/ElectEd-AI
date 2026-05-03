@@ -184,12 +184,18 @@ function initScrollEffects() {
 
 /** Fetch and render election phase data */
 async function loadElectionPhases() {
+  const container = document.getElementById('phases-container');
   try {
     const response = await fetch('/api/election/phases');
     const data = await response.json();
-    if (data.success) renderPhases(data.data);
+    if (data.success) {
+      renderPhases(data.data);
+    } else {
+      if (container) container.innerHTML = '<p class="error-message">Unable to load election phases. Please try again later.</p>';
+    }
   } catch (error) {
     console.error('Failed to load election phases:', error);
+    if (container) container.innerHTML = '<p class="error-message">Connection error. Could not load election data.</p>';
   }
 }
 
@@ -250,27 +256,62 @@ function renderPhases(phases) {
       </div>
     </div>
   `).join('');
+  
+  // Expand first phase by default
+  if (phases.length > 0) {
+    const firstCard = document.getElementById(`phase-${phases[0].id}`);
+    if (firstCard) firstCard.classList.add('expanded');
+    updateTimelineProgress(0, phases.length);
+  }
+}
+
+/**
+ * Update the timeline progress bar and dots.
+ * @param {number} index - Active phase index
+ * @param {number} total - Total number of phases
+ */
+function updateTimelineProgress(index, total) {
+  const progressBar = document.getElementById('timeline-progress-bar');
+  const dots = document.querySelectorAll('.timeline-dot');
+  
+  if (progressBar) {
+    const pct = (index / (total - 1)) * 100;
+    progressBar.style.width = `${pct}%`;
+  }
+  
+  dots.forEach((dot, i) => {
+    dot.classList.toggle('active', i === index);
+    dot.classList.toggle('completed', i < index);
+  });
 }
 
 /**
  * Toggle a phase card open/closed.
  * @param {string} phaseId - The phase identifier
  */
-function togglePhase(phaseId) {
+function togglePhase(phaseId, forceOpen = false) {
   const card = document.getElementById(`phase-${phaseId}`);
   if (!card) return;
-  const isExpanded = card.classList.toggle('expanded');
-  card.setAttribute('aria-expanded', isExpanded);
+  
+  const isExpanded = forceOpen ? card.classList.add('expanded') : card.classList.toggle('expanded');
+  card.setAttribute('aria-expanded', card.classList.contains('expanded'));
 
-  // Update timeline
-  const allCards = document.querySelectorAll('.phase-card');
-  const dots = document.querySelectorAll('.timeline-dot');
-  allCards.forEach((c, i) => {
-    if (dots[i]) {
-      dots[i].classList.toggle('active', c.id === `phase-${phaseId}` && isExpanded);
-      dots[i].classList.toggle('completed', i < [...allCards].indexOf(card));
-    }
-  });
+  // If we just opened this card, maybe close others? (Optional: accordion behavior)
+  if (card.classList.contains('expanded')) {
+    document.querySelectorAll('.phase-card').forEach(c => {
+      if (c !== card) {
+        c.classList.remove('expanded');
+        c.setAttribute('aria-expanded', 'false');
+      }
+    });
+  }
+
+  // Update timeline based on the currently expanded card
+  const allCards = Array.from(document.querySelectorAll('.phase-card'));
+  const activeIndex = allCards.findIndex(c => c.classList.contains('expanded'));
+  if (activeIndex !== -1) {
+    updateTimelineProgress(activeIndex, allCards.length);
+  }
 }
 
 /**
@@ -280,8 +321,9 @@ function togglePhase(phaseId) {
 function scrollToPhase(index) {
   const cards = document.querySelectorAll('.phase-card');
   if (cards[index]) {
+    const phaseId = cards[index].id.replace('phase-', '');
+    togglePhase(phaseId, true); // Force open
     cards[index].scrollIntoView({ behavior: 'smooth', block: 'center' });
-    cards[index].click();
   }
 }
 

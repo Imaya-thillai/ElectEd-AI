@@ -84,7 +84,7 @@ function initializeAI() {
   try {
     genAI = new GoogleGenerativeAI(apiKey);
     model = genAI.getGenerativeModel({
-      model: 'gemini-2.0-flash',
+      model: 'gemini-1.5-flash',
       generationConfig: { temperature: 0.7, topP: 0.9, topK: 40, maxOutputTokens: 2048 },
       safetySettings: [
         { category: 'HARM_CATEGORY_HARASSMENT', threshold: 'BLOCK_MEDIUM_AND_ABOVE' },
@@ -137,7 +137,7 @@ async function chat(message, sessionId) {
   } catch (error) {
     logger.error('Gemini error:', { error: error.message, sessionId });
     return {
-      response: getFallbackResponse(message) + '\n\n> ⚠️ *AI temporarily unavailable.*',
+      response: getFallbackResponse(message) + '\n\n> 💡 *Note: Using educational knowledge base while AI is processing.*',
       source: 'fallback'
     };
   }

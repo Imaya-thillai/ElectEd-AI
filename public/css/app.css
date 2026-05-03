@@ -296,3 +296,12 @@
     padding: 0 var(--space-4) var(--space-4);
   }
 }
+.error-message {
+  padding: var(--space-6);
+  background: var(--color-error-bg);
+  color: var(--color-error);
+  border-radius: var(--radius-lg);
+  text-align: center;
+  font-weight: 500;
+  margin: var(--space-6) 0;
+}
